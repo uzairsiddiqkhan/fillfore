@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Fillfore" parent="Theme.MaterialComponents.DayNight">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/main</item>
+        <item name="colorPrimaryVariant">@color/support_main</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/support_main</item>
+        <item name="colorSecondaryVariant">@color/support_main</item>
+        <item name="colorOnSecondary">@color/support_main</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorSecondaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="android:navigationBarColor">#000000</item>
+    </style>
+</resources>
