@@ -21,8 +21,8 @@ public class verificationActivity extends AppCompatActivity {
         binding.btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent =new Intent(verificationActivity.this,MainActivity.class);
-//                startActivity(intent);
+                Intent intent =new Intent(verificationActivity.this,MainActivity.class);
+                startActivity(intent);
             }
         });
     }
