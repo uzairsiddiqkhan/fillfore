@@ -12,6 +12,8 @@ public class splashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+
+
 //this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         Thread thread = new Thread(){
@@ -39,6 +41,8 @@ public class splashActivity extends AppCompatActivity {
             }
 
         }; thread.start();
+
+
 
     }
 

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="12dp"
+    android:layout_height="wrap_content">
+
+
+    <com.google.android.material.card.MaterialCardView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        app:cardCornerRadius="12dp"
+        app:strokeColor="@color/b7_stroke_50"
+        app:strokeWidth="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/blog_image"
+                android:layout_width="match_parent"
+                android:layout_height="212dp"
+                android:scaleType="centerCrop"
+                tools:srcCompat="@drawable/dummy_photo" />
+
+            <TextView
+                android:id="@+id/blog_introTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/blog_image"
+                android:padding="12dp"
+                android:text="6 Steps to improve your Emotional
+Intelligence and Leadership Ability in this Era of Technology....."
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+
+
+
+
+
+
+            <!--            icons layout-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/blog_introTxt"
+                android:background="@drawable/b7_1dp_stroke_50dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+               >
+
+                <!--linear layout for like icon-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/ic_likes"
+                        android:layout_width="32dp"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="10dp"
+
+                        app:srcCompat="@drawable/ic_likes" />
+
+
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Likes"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+
+                <!--linear layout for like icon-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    >
+
+                    <ImageView
+                        android:id="@+id/ic_comments"
+                        android:layout_width="32dp"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="10dp"
+
+                        app:srcCompat="@drawable/ic_comments" />
+
+
+
+
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Comments"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                </LinearLayout>
+                <!--linear layout for like icon-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/ic_share"
+                        android:layout_width="32dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingRight="10dp"
+
+                        app:srcCompat="@drawable/ic_share" />
+
+
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Shares"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

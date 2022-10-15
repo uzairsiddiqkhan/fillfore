@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/support_main"
+    android:background="@color/main"
     android:gravity="center_vertical"
     android:orientation="vertical"
     tools:context=".splashActivity">
@@ -17,5 +17,6 @@
             android:layout_gravity="center"
             app:srcCompat="@drawable/logo130dp"
             app:tint="@color/white_variant" />
+
 </LinearLayout>
 

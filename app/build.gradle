@@ -45,4 +45,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation 'com.hbb20:ccp:2.6.0'
+
+    implementation 'com.github.Kwasow:BottomNavigationCircles-Android:1.2'
 }
