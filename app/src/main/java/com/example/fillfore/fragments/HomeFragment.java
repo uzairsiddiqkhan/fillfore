@@ -3,6 +3,8 @@ package com.example.fillfore.fragments;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.MenuProvider;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -41,19 +44,16 @@ public class HomeFragment extends Fragment {
 
         binding = FragmentHomeBinding.inflate(getLayoutInflater());
 
-//        String userName = "uzair khan";
-//        String uppercase = userName.substring(0, 1).toUpperCase() + userName.substring(1);
-//        binding.userName.setText(uppercase);
-//         AppCompatActivity activity =new AppCompatActivity();
-//        activity.setSupportActionBar(binding.homeToolbar);
+        // for menu addition in toolbar
 
-
-        // For Toolbar
-        binding.homeToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @SuppressLint("NonConstantResourceId")
+        binding.homeToolbar.addMenuProvider(new MenuProvider() {
             @Override
-            public boolean onMenuItemClick(MenuItem item) {
+            public void onCreateMenu(@NonNull Menu menu, @NonNull MenuInflater menuInflater) {
+                menuInflater.inflate(R.menu.home_toolbar_menu, menu);
+            }
 
+            @Override
+            public boolean onMenuItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.ic_home_search:
                         Toast.makeText(getContext(), "search clicked", Toast.LENGTH_SHORT).show();
@@ -62,10 +62,12 @@ public class HomeFragment extends Fragment {
                         Toast.makeText(getContext(), "notification clicked", Toast.LENGTH_SHORT).show();
                         break;
                 }
-
                 return false;
             }
         });
+
+
+
 
 
 
@@ -75,12 +77,12 @@ public class HomeFragment extends Fragment {
         String[] tabsTitle = new String[] {"General", "Informative", "Motivational"};
         adapter =new blog_viewPager_Adapter(this);
         binding.viewPagerBlog.setAdapter(adapter);
-
-       new TabLayoutMediator(binding.tabLayout,binding.viewPagerBlog,((tab, position) -> tab.setText(tabsTitle[position]))).attach();
+        new TabLayoutMediator(binding.tabLayout,binding.viewPagerBlog,((tab, position) -> tab.setText(tabsTitle[position]))).attach();
 
 
         return binding.getRoot();
 
     }
+
 
 }
