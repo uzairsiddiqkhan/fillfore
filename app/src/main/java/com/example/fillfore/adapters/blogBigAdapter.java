@@ -1,9 +1,18 @@
 package com.example.fillfore.adapters;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.Typeface;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.TextAppearanceSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,14 +23,17 @@ import com.example.fillfore.R;
 import com.example.fillfore.models.blogBigModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class blogBigAdapter extends RecyclerView.Adapter<blogBigAdapter.viewHolder> {
+public class blogBigAdapter extends RecyclerView.Adapter<blogBigAdapter.viewHolder> implements Filterable {
 
-    ArrayList<blogBigModel> model;
+   private List<blogBigModel> model;
+    private ArrayList<blogBigModel> modelFull;
     Context context;
 
     public blogBigAdapter(ArrayList<blogBigModel> model, Context context) {
         this.model = model;
+        modelFull =new ArrayList<>(model);
         this.context = context;
     }
 
@@ -47,6 +59,8 @@ public class blogBigAdapter extends RecyclerView.Adapter<blogBigAdapter.viewHold
     }
 
 
+
+
     public class viewHolder extends RecyclerView.ViewHolder {
         TextView introBlog;
         TextView likes;
@@ -62,4 +76,55 @@ public class blogBigAdapter extends RecyclerView.Adapter<blogBigAdapter.viewHold
 
         }
     }
+
+    @Override
+    public Filter getFilter() {
+        return generalFilter;
+    }
+
+    private Filter generalFilter =new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+
+            List<blogBigModel> filteredModel =new ArrayList<>();
+            if(constraint ==null || constraint.length()==0) {
+                filteredModel.addAll(modelFull);
+            }
+            else   {
+                String searchQuery= constraint.toString().toLowerCase().trim();
+
+                Spannable span =new SpannableString(searchQuery);
+
+                for(blogBigModel item : modelFull){
+                    if(item.getBlogIntro().toLowerCase().contains(searchQuery)){
+
+                        Spannable WordtoSpan = new SpannableString("partial colored text");
+                        WordtoSpan.setSpan(new ForegroundColorSpan(Color.BLUE), 2, 4, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+
+                        filteredModel.add(item);
+                    }
+                }
+
+
+                span.setSpan(new ForegroundColorSpan(Color.RED), 0, searchQuery
+                                .toString().length(),
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+
+            }
+        FilterResults results =new FilterResults();
+            results.values = filteredModel;
+            return  results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+        model.clear();
+        Spannable span =new SpannableString(constraint);
+        model.addAll((List)results.values);
+        notifyDataSetChanged();
+
+        }
+    };
 }

@@ -16,7 +16,6 @@ public class blog_viewPager_Adapter extends FragmentStateAdapter {
     String[] tabs = {"General", "Informative", "Motivational"};
 
 
-
     public blog_viewPager_Adapter(@NonNull Fragment fragment) {
         super(fragment);
     }

@@ -21,7 +21,7 @@ ActivityLoginBinding binding;
         binding.btnGetIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(loginActivity.this, verificationActivity.class);
+                Intent intent =new Intent(loginActivity.this, com.example.fillfore.verificationActivity.class);
                 startActivity(intent);
             }
         });

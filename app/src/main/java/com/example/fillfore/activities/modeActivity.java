@@ -1,4 +1,4 @@
-package com.example.fillfore;
+package com.example.fillfore.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,9 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 
+
 import com.example.fillfore.databinding.ActivityModeBinding;
+import com.example.fillfore.loginActivity;
 
 public class modeActivity extends AppCompatActivity {
     ActivityModeBinding binding;
@@ -21,7 +23,7 @@ public class modeActivity extends AppCompatActivity {
 binding.btnSignup.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        Intent intent=new Intent(modeActivity.this,loginActivity.class);
+        Intent intent=new Intent(modeActivity.this, loginActivity.class);
         startActivity(intent);
     }
 });

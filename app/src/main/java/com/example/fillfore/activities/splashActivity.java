@@ -1,9 +1,12 @@
-package com.example.fillfore;
+package com.example.fillfore.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.example.fillfore.R;
+import com.example.fillfore.activities.modeActivity;
 
 public class splashActivity extends AppCompatActivity {
 

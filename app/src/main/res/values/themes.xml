@@ -13,11 +13,19 @@
         <item name="android:statusBarColor">?attr/colorSecondaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="android:navigationBarColor">#000000</item>
+
     </style>
 
     <style name="MyCustomTabLayout" parent="@android:style/TextAppearance.Widget.TabWidget">
         <item name="textAllCaps">false</item>
         <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+
+    </style>
+
+    <style name="searchView" parent="@style/Widget.AppCompat.SearchView">
+
+        <item name="android:textSize">20dp</item>
         <item name="android:textStyle">bold</item>
 
     </style>

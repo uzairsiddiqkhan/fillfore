@@ -5,15 +5,23 @@ import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.fillfore.databinding.ActivityMainBinding;
 import com.example.fillfore.fragments.HomeFragment;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
+    TabLayout tabLayout;
+    Toolbar toolbar;
+    SearchView searchView;
+
+
 
 
     @Override
@@ -21,9 +29,14 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
         setContentView(binding.getRoot());
-
-
         fragSelection(new HomeFragment());
+        tabLayout = findViewById(R.id.tabLayout);
+        toolbar = findViewById(R.id.homeToolbar);
+
+
+
+
+
 
 
         binding.bnView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -56,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
+
     }
 
     public void fragSelection(Fragment frag) {
@@ -66,20 +81,41 @@ public class MainActivity extends AppCompatActivity {
 
         // store all data in stack
 //            fm.addToBackStack(null); // but a useless method ...
-
     }
 
     @Override
     public void onBackPressed() {
 
+
         if (binding.bnView.getSelectedItemId() == R.id.btnHome) {
-            finish();
-            super.onBackPressed();
+
+            tabLayout = findViewById(R.id.tabLayout);
+            toolbar = findViewById(R.id.homeToolbar);
+
+            if (tabLayout.getSelectedTabPosition() == 0) {
+
+
+                if (toolbar.hasExpandedActionView()) {
+                    toolbar.collapseActionView();
+                } else {
+                    super.onBackPressed();
+                }
+            } else if (tabLayout.getSelectedTabPosition() == 1 || tabLayout.getSelectedTabPosition() == 2) {
+                if (toolbar.hasExpandedActionView()) {
+                    toolbar.collapseActionView();
+
+                } else {
+
+                    tabLayout.getTabAt(0).select();
+                }
+            }
 
         } else {
             binding.bnView.setSelectedItemId(R.id.btnHome);
         }
 
     }
+
+
 
 }
