@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "269744826860",
+    "project_id": "fillfore",
+    "storage_bucket": "fillfore.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269744826860:android:5e4d2f45df37d33cc078c9",
+        "android_client_info": {
+          "package_name": "com.fillfore.speakClub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "269744826860-h49okgla4ka03oqnmvt94ikpqgbddj1q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fillfore.speakClub",
+            "certificate_hash": "1f0347dc9c3c2e84eba57db29edd4a67025aa255"
+          }
+        },
+        {
+          "client_id": "269744826860-7m7i8uvpebmu9d6fcnfrln0vgdu9ibi0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqEafdPs74WgC8zdPIySQhWal0sjqkMbY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "269744826860-7m7i8uvpebmu9d6fcnfrln0vgdu9ibi0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

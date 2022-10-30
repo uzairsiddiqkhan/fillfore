@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fillfore.speakClub.activities.BlogDetailActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/blogImage"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:scaleType="centerCrop"
+            android:layout_weight="1"
+
+            app:srcCompat="@drawable/backgroud_cover" />
+
+        <TextView
+            android:id="@+id/blogTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textIsSelectable="true"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="The Blog Title Goes here" />
+
+        <TextView
+            android:id="@+id/blogDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textIsSelectable="true"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:layout_marginTop="12dp"
+            android:textSize="16sp"
+            android:text="TextView" />
+
+
+    </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+
+</LinearLayout>
+
+<!--<WebView-->
+<!--android:id="@+id/webView"-->
+<!--android:layout_width='match_parent'-->
+<!--android:layout_height="match_parent"/>-->
+
+
+
+<!--<ProgressBar-->
+<!--android:id="@+id/progressBar"-->
+<!--style="?android:attr/progressBarStyle"-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_centerInParent="true"-->
+<!--android:layout_x="108dp"-->
+<!--android:layout_y="293dp" />-->

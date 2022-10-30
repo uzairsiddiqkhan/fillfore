@@ -1,14 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".callFragement">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentTop="true">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/homeToolbar"
+            android:layout_width="match_parent"
+            android:background="@color/main"
+            app:menu="@menu/home_toolbar_menu"
+            android:layout_height="?attr/actionBarSize">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:gravity="top"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+
+                    android:src="@drawable/ic_menu_three_lines"
+                    app:tint="@color/white_variant" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:textColor="@color/white_variant"
+                        android:text="Welcome," />
+
+                    <TextView
+                        android:id="@+id/userName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white_variant"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:text="Uzair Khan" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnRandomCall"
+        android:layout_width="match_parent"
+        android:padding="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:background="@drawable/button_ring"
+        android:textSize="18sp"
+        android:textColor="@color/main"
+        android:text="Find a Random Partner" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/callRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="call fragment" />
+        tools:listitem="@layout/template_call_fragment"
+        android:layout_above="@+id/btnRandomCall"
+        android:layout_below="@+id/appbar"
+        />
 
-</FrameLayout>
+
+
+</RelativeLayout>

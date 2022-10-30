@@ -7,7 +7,7 @@
     android:background="@color/main"
     android:gravity="center_vertical"
     android:orientation="vertical"
-    tools:context=".activities.splashActivity">
+    tools:context="com.fillfore.speakClub.activities.splashActivity">
 
 
         <ImageView
